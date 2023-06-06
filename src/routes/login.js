@@ -10,8 +10,16 @@ const router = express.Router();
 //Acceso: IP de la maquina:5000/auth
 
 router.get('/login', LoginController.index);
-router.get('/register', LoginController.register);
+router.post('/register', LoginController.register);
 router.post('/auth', LoginController.auth);
+
+
+
+
+
+
+
+
 router.get('/logout', LoginController.logout);
 
 module.exports = router;
