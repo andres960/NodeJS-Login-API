@@ -61,7 +61,7 @@ function auth(req, res) {
 
   req.getConnection((err, conn) => {
     if (err) {
-      // Error al conectarse a la base de datos u otro error interno
+      // Error al conectarse a la base de datos u otro error internoo
       res.status(500).send('Internal Server Error');
     } else {
       const query = 'SELECT * FROM users WHERE email = ? AND password = ?';
@@ -72,10 +72,10 @@ function auth(req, res) {
         } else {
           if (rows.length > 0) {
             console.log(rows);
-            res.status(200).send('Success');
+            res.status(200).send('Autenticación satisfactoria');
           } else {
             console.log('not');
-            res.status(404).send('User Not Found');
+            res.status(404).send('User Not Found, Error en la autenticacion');
           }
         }
       });
