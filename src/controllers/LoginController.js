@@ -4,10 +4,14 @@ function index(req, res) {
     res.redirect('/');
 	
   } else {
+    //Redirigir al usuario al index
     res.render('login/index');
   }
 }
 
+
+
+//FUNCION PARA RETORNAR LA VISTA PARA REGISTRAR USUARIOS
 function register(req, res) {
   res.render('login/register');
 }
@@ -46,6 +50,7 @@ function auth(req, res) {
 
 
 
+//Funcion para cerrar la sesion
 function logout(req, res) {
   if (req.session.loggedin) {
     req.session.destroy();
